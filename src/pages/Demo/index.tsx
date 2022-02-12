@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import styles from './index.module.scss'
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
@@ -7,10 +7,30 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// Component
+import { InputSelect } from '../../components'
+import axios from 'axios'
+
+
+
+const covidDataUrl = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces"
 
 const Demo: React.FC = ():JSX.Element =>{
+    const [covidData,setCovidData]= useState<any>(null)
+    const [provinces,setProvinces] =useState<any[]>([])
+    const [date,setDate]=useState(new Date())
     const navigate = useNavigate();
-
+    useEffect(()=>{
+     
+        axios.get(covidDataUrl).then((response)=> {
+            setCovidData(response.data)
+            console.log('Res',response.data)
+            const newArrProvince:any[] = []
+            response.data.map((e:any)=> newArrProvince.push({label:`${e.province}`, value:`${e.province}`}))
+            setProvinces(newArrProvince)
+        })
+       
+    },[])
     return(
         <>
             <div className={styles.container}>
@@ -24,12 +44,11 @@ const Demo: React.FC = ():JSX.Element =>{
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                         >
-                        <Typography>Accordion 1</Typography>
+                        <Typography><p>Accordion 1</p></Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                         <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/>
                         </Typography>
                         </AccordionDetails>
                         </Accordion>
@@ -39,7 +58,7 @@ const Demo: React.FC = ():JSX.Element =>{
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                             >
-                            <Typography>Accordion 2</Typography>
+                            <Typography><p>Accordion 2</p></Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
