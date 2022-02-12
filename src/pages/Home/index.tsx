@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 //Mui
@@ -15,13 +15,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+//icon
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import CoPresentIcon from '@mui/icons-material/CoPresent';
+import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 //Component
-import { Demo } from '../../pages'
+import { Demo, Workshop } from '../../pages'
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -113,6 +113,7 @@ const Home: React.FC = ():JSX.Element =>{
         const handleDrawerClose = () => {
             setOpen(false);
         };
+    const [page,setPage] = useState(1)
 
     return(
         <>
@@ -145,30 +146,36 @@ const Home: React.FC = ():JSX.Element =>{
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+              <Button color="primary" onClick={()=>setPage(1)}>
+                <CoPresentIcon />
+              </Button>
+              </List>
+              <List>
+              <Button color="success" onClick={()=>setPage(2)}>
+                  <FolderSpecialIcon />
+              </Button>
         </List>
         <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+              <Button color="secondary" onClick={()=>setPage(3)}>
+                  <CoPresentIcon />
+              </Button>
+              </List>
+              <List>
+              <Button color="secondary" onClick={()=>console.log('click')}>
+                  <InboxIcon />
+              </Button>
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 ,backgroundColor:'#dfdfdf', height:'100vh'}}>
         <DrawerHeader />
-        <Demo/>
+        { page === 1 ?
+            <Demo/>
+        : page === 2 ?
+            <Workshop/>
+        :
+        <></>}
+        
       </Box>
     </Box>
             {/* <div>
