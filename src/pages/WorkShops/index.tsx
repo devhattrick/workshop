@@ -10,6 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // Component
 import { InputSelect } from '../../components'
 import SearchCovid from './SearchCovid'
+import TodoList from './TodoList'
 // import axios from 'axios'
 
 
@@ -51,13 +52,10 @@ const Demo: React.FC = ():JSX.Element =>{
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography><p>Accordion 2</p></Typography>
+                            <Typography><p>Todo List</p></Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
+                                <TodoList/>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion disabled>

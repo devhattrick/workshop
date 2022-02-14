@@ -48,7 +48,7 @@ const Demo: React.FC = ():JSX.Element =>{
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/>
+                                {/* <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/> */}
                             </Typography>
                         </AccordionDetails>
                         </Accordion>

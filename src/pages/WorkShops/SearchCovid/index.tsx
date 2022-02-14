@@ -8,8 +8,9 @@ const covidDataUrl = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-pr
 
 
 const SearchCovid: React.FC = (): JSX.Element => {
-  const [covidData,setCovidData]= useState<any>(null)
+    const [covidData,setCovidData]= useState<any>(null)
     const [provinces,setProvinces] =useState<any[]>([])
+    const [selectData,setSelectData] = useState('')
     // const [date,setDate]=useState(new Date())
     
     useEffect(()=>{
@@ -25,8 +26,8 @@ const SearchCovid: React.FC = (): JSX.Element => {
     },[])
   return (
     <>
-      <div>
-        <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/>              
+      <div className={styles.containerSearchCovid}>
+        <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces} _selectData={setSelectData} _value={selectData}/>              
       </div>
     </>
   )

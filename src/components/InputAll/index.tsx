@@ -11,11 +11,13 @@ interface Props {
     _label: string
     _textHelper:string
     _menuList:any[]
+    _selectData:any
+    _value:any
 }
 export const InputSelect:React.FC<Props> = (props:Props): JSX.Element => {
-    const [age, setAge] = React.useState('');
+    // const [age, setAge] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value);
+        props._selectData(event.target.value);
       };
     
     return(
@@ -29,7 +31,7 @@ export const InputSelect:React.FC<Props> = (props:Props): JSX.Element => {
                 <Select
                     labelId="demo-simple-select-helper-label"
                     id="demo-simple-select-helper"
-                    value={age}
+                    value={props._value}
                     label="Age"
                     onChange={handleChange}
                 >
