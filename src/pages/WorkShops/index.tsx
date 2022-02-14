@@ -9,62 +9,53 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // Component
 import { InputSelect } from '../../components'
-import axios from 'axios'
+import SearchCovid from './SearchCovid'
+import TodoList from './TodoList'
+// import axios from 'axios'
 
 
 
 const covidDataUrl = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces"
 
 const Demo: React.FC = ():JSX.Element =>{
-    const [covidData,setCovidData]= useState<any>(null)
-    const [provinces,setProvinces] =useState<any[]>([])
+   
     const [date,setDate]=useState(new Date())
     const navigate = useNavigate();
-    useEffect(()=>{
-     
-        axios.get(covidDataUrl).then((response)=> {
-            setCovidData(response.data)
-            console.log('Res',response.data)
-            const newArrProvince:any[] = []
-            response.data.map((e:any)=> newArrProvince.push({label:`${e.province}`, value:`${e.province}`}))
-            setProvinces(newArrProvince)
-        })
-       
-    },[])
+    
     return(
         <>
             <div className={styles.container}>
                 <nav>
-                    <p className={styles.text}>Demo</p>
+                    <p className={styles.text}>WorkShops</p>
                 </nav>
-                <section>
+                <section >
                     <Accordion>
                         <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                           
                         >
                             <Typography><p>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p></Typography>
                         </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                {/* <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/> */}
-                            </Typography>
-                        </AccordionDetails>
+                            <AccordionDetails 
+                            className={styles.covidContainer}
+                            >
+                                <Typography>
+                                <SearchCovid/>
+                                </Typography>
+                            </AccordionDetails>
                         </Accordion>
                         <Accordion>
-                            <AccordionSummary
+                        <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2a-content"
                             id="panel2a-header"
-                            >
-                            <Typography><p>Accordion 2</p></Typography>
+                        >
+                            <Typography><p>Todo List</p></Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
+                                <TodoList/>
                             </AccordionDetails>
                         </Accordion>
                         <Accordion disabled>

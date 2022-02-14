@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './index.module.scss'
 
 
-const TodoList: React.FC = (): JSX.Element => {
+const NameComponent: React.FC = (): JSX.Element => {
   return (
     <>
       <div>
-        <p>TodoList</p>
+        <p>Prifile</p>
       </div>
     </>
   )
 }
-export default TodoList
+export default NameComponent
