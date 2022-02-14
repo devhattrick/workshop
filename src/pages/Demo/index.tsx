@@ -8,7 +8,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // Component
-import { InputSelect } from '../../components'
+import {ButtonComponent } from '../../components'
 import axios from 'axios'
 
 
@@ -61,10 +61,11 @@ const Demo: React.FC = ():JSX.Element =>{
                             <Typography><p>Accordion 2</p></Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>
+                        
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
                                 malesuada lacus ex, sit amet blandit leo lobortis eget.
-                            </Typography>
+                                <ButtonComponent _text="Click" _variant="contained" _colorBG="success" _colorText="white"  _functionOnClick={()=>console.log('a')}/>
+                           
                             </AccordionDetails>
                         </Accordion>
                         <Accordion disabled>

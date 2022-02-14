@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from './index.module.scss'
 import Button from '@mui/material/Button';
-import { height } from '@mui/system';
 
 interface Props{
   _text: string
-  _functionOnClick:any
+  _functionOnClick?:any
   _colorBG: 'success'|'error'|'primary'|'gentle'|'warning'|'info'|'pink'|'black'|'white'
   _colorText: 'success'|'error'|'primary'|'gentle'|'warning'|'info'|'pink'|'black'|'white'
   _variant:'text'|'outlined'|'contained'
 }
+
 const listColor:any = [
   {
     name:'success',
@@ -47,18 +47,17 @@ const listColor:any = [
     name:'white',
     code:'#ffffff',
   },
-
 ]
-const NameComponent: React.FC<Props> = (props:Props): JSX.Element => {
-  const codeBG:string = listColor.find((element:any)=>element === props._colorBG).code
-  const codeText:string = listColor.find((element:any)=>element === props._colorText).code
+const ButtonComponent: React.FC<Props> = (props:Props): JSX.Element => {
+  const codeBG:string = listColor.find((element:any)=> element === props._colorBG).code
+  const codeText:string = listColor.find((element:any)=> element === props._colorText).code
   return (
     
       <Button
           fullWidth
           variant={props._variant}
           onClick={() =>
-          props?._functionOnClick?.()
+            props._functionOnClick
           }
           style={{ backgroundColor: codeBG, color: codeText, height: 'inherit', borderColor: codeText }}
        >
@@ -67,4 +66,4 @@ const NameComponent: React.FC<Props> = (props:Props): JSX.Element => {
    
   )
 }
-export default NameComponent
+export default ButtonComponent
