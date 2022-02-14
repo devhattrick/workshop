@@ -1,4 +1,61 @@
-// Container
-    .container{
-        padding:20px 30px;
+// Container TodoList
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Roboto&display=swap');
+
+    .containerTodoList{
+        padding:0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+
+
+
+        //ShowList
+        
+        //Wrapper
+        .inputWrapper{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .showListWrapper{
+
+        }
+
+        .textTopic{
+            font-size:1.5rem;
+            font-weight:bold;
+        }
+        .input{
+            // height:30px;
+            font-size:1.2rem;
+            border-radius:5px;
+            padding:8px  5px;
+            border:1px solid#EAEAEC ;
+            &:focus{
+                outline:none;
+                border:2px solid#CBD9DB;
+            }
+        }
+        .btnAdd{
+            font-family: 'Kanit', sans-serif;
+            font-size:1.2rem;
+            cursor: pointer;
+            border:none;
+            padding:5px;
+            border-radius: 5px;
+            background-color:#827268;
+            color:#fff;
+            &:hover{
+                background-color:#9e8a7e;
+                box-shadow: 1px 1px 3px 1px black;
+            }
+            &:active{
+                background-color:#b59f92;
+
+            }
+        }
     }
+    
