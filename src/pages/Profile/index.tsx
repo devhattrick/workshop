@@ -6,7 +6,7 @@ const NameComponent: React.FC = (): JSX.Element => {
   return (
     <>
       <div>
-        <p>Prifile</p>
+        <p>Profile</p>
       </div>
     </>
   )

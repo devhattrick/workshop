@@ -44,12 +44,12 @@ const Demo: React.FC = ():JSX.Element =>{
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                         >
-                        <Typography><p>Accordion 1</p></Typography>
+                            <Typography><p>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p></Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-                        <Typography>
-                        <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/>
-                        </Typography>
+                            <Typography>
+                                <InputSelect _label="เลือกจังหวัด" _textHelper="ข้อมูลของจังหวัด" _menuList={provinces}/>
+                            </Typography>
                         </AccordionDetails>
                         </Accordion>
                         <Accordion>

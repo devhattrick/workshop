@@ -1,4 +1,19 @@
-// Container
-    .container{
-        padding:20px 30px;
-    }
+
+.container{
+    // background-color: #dfdfdf;
+ 
+    padding:0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.text{
+    color: #3E8078;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.covidContainer{
+    background-image: url("../../images/COVID-19_header.jpg");
+    background-repeat: no-repeat, repeat;
+}

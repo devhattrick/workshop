@@ -16,12 +16,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 //icon
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 //Component
-import { Demo, Workshop } from '../../pages'
+import { Demo, Workshop, Profile } from '../../pages'
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -134,13 +135,15 @@ const Home: React.FC = ():JSX.Element =>{
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
+            Mini Workshop
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
+          <p>title</p>
           <IconButton onClick={handleDrawerClose}>
+            
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
@@ -148,6 +151,7 @@ const Home: React.FC = ():JSX.Element =>{
         <List>
               <Button color="primary" onClick={()=>setPage(1)}>
                 <CoPresentIcon />
+                {open === false ? '':<p>Profile</p>}
               </Button>
               </List>
               <List>
@@ -157,20 +161,23 @@ const Home: React.FC = ():JSX.Element =>{
         </List>
         <Divider />
         <List>
-              <Button color="secondary" onClick={()=>setPage(3)}>
-                  <CoPresentIcon />
+              <Button color="info" onClick={()=>setPage(3)}>
+                  <AutoGraphIcon />
               </Button>
               </List>
               <List>
-              <Button color="secondary" onClick={()=>console.log('click')}>
+              <Button color="secondary" onClick={()=>setPage(0)}>
                   <InboxIcon />
               </Button>
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 ,backgroundColor:'#dfdfdf', height:'100vh'}}>
         <DrawerHeader />
-        { page === 1 ?
-            <Demo/>
+        { 
+          page === 0 ?
+        <Demo/>
+        : page === 1 ?
+            <Profile/>
         : page === 2 ?
             <Workshop/>
         :
