@@ -1,10 +1,11 @@
 import React,{useState} from 'react'
 import styles from './index.module.scss'
-import {ButtonComponent} from '../../../components'
+import {ButtonComponent,ListCard} from '../../../components'
 
 const TodoList: React.FC = (): JSX.Element => {
   const [data,setData]= useState('')
   const [list,setList]=useState<any[]>([])
+  const [alert,setAlert] = useState({ show:false, msg:'', type:''})
   const handleChange=(e:any)=>{
     setData(e.target.value)
   }
@@ -18,6 +19,7 @@ const TodoList: React.FC = (): JSX.Element => {
       setList([...list,newItem])
       setData('')
   }
+  console.log(list)
 
   return (
     <>
@@ -25,11 +27,23 @@ const TodoList: React.FC = (): JSX.Element => {
         <p className={styles.textTopic}>Todo List {data}</p>
         <form className={styles.from} onSubmit={submitData}>
           <section className={styles.inputWrapper}>
+            {/* {alert.show && } */}
             <input type="text" className={styles.input} onChange={handleChange}
               value={data}/>
             <button type="submit" className={styles.btnAdd}>Add Data</button>
           </section>
-          <section className={styles.showList}>
+          <section className={styles.showListWrapper}>
+            {list.map((e:any, index:number)=>{
+              return(
+                <div key={index}>
+                   <ListCard _text={e.title} _onClickDelete={()=>{
+                     console.log('index',index)
+                    }}/>
+                </div>
+               
+              )
+            })}
+          
           </section>
         </form>
       </div>
