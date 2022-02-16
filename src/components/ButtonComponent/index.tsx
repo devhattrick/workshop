@@ -1,32 +1,36 @@
 import React from "react";
 import styles from "./index.module.scss";
 import Button from "@mui/material/Button";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import EditIcon from '@mui/icons-material/Edit';
+import ClearIcon from '@mui/icons-material/Clear';
 
 interface Props {
   _text: string;
   _functionOnClick?: any;
+  _isIcon?: "add" | "delete" | "edit"
   _colorBG:
-    | "success"
-    | "error"
-    | "primary"
-    | "gentle"
-    | "warning"
-    | "info"
-    | "pink"
-    | "black"
-    | "white";
+  | "success"
+  | "error"
+  | "primary"
+  | "gentle"
+  | "warning"
+  | "info"
+  | "pink"
+  | "black"
+  | "white";
   _colorText:
-    | "success"
-    | "error"
-    | "primary"
-    | "gentle"
-    | "warning"
-    | "info"
-    | "pink"
-    | "black"
-    | "white";
+  | "success"
+  | "error"
+  | "primary"
+  | "gentle"
+  | "warning"
+  | "info"
+  | "pink"
+  | "black"
+  | "white";
   _variant: "text" | "outlined" | "contained";
-  _type?:"button"|"submit"
+  _type?: "button" | "submit"
 }
 
 const listColor: any = [
@@ -86,6 +90,11 @@ const ButtonComponent: React.FC<Props> = (props: Props): JSX.Element => {
         height: "inherit",
         borderColor: codeText,
       }}
+      startIcon={
+        props._isIcon === "add"  ? <AddCircleOutlineIcon /> 
+        : props._isIcon === "delete" ? <ClearIcon /> 
+        : props._isIcon === "edit" ? <EditIcon /> 
+        : <></>}
     >
       <span className={styles.text}>{props._text}</span>
     </Button>

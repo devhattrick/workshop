@@ -24,6 +24,7 @@
             gap: 10px;
             align-items: center;
         }
+
         .showListWrapper{
             display: flex;
             flex-direction: column;
@@ -31,9 +32,10 @@
         }
 
         .textTopic{
-            font-size:1.5rem;
+            font-size:1.7rem;
             font-weight:bold;
         }
+
         .input{
             // height:30px;
             font-size:1.5rem;
@@ -45,6 +47,8 @@
                 border:2px solid#CBD9DB;
             }
         }
+
+        //Button
         .btnAdd{
             font-family: 'Kanit', sans-serif;
             font-size:1.2rem;
@@ -62,6 +66,9 @@
                 background-color:#b59f92;
 
             }
+        }
+        .btnBox{
+            height:42px;
         }
     }
     
