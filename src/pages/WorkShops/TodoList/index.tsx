@@ -18,6 +18,12 @@ const TodoList: React.FC = (): JSX.Element => {
     setList([...list, newItem]);
     setData("");
   };
+
+  const itemRemove=(index:any)=>{
+    const newList = [...list]
+    newList.splice(index,1)
+    setList(newList)
+  }
   console.log(list);
 
   return (
@@ -45,6 +51,7 @@ const TodoList: React.FC = (): JSX.Element => {
                     _text={e.title}
                     _onClickDelete={() => {
                       console.log("index", index);
+                      itemRemove(index)
                     }}
                   />
                 </div>
