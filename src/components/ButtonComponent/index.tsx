@@ -26,12 +26,13 @@ interface Props {
     | "black"
     | "white";
   _variant: "text" | "outlined" | "contained";
+  _type?:"button"|"submit"
 }
 
 const listColor: any = [
   {
     name: "success",
-    code: "#26b700",
+    code: "#8AC82D",
   },
   {
     name: "error",
@@ -43,11 +44,11 @@ const listColor: any = [
   },
   {
     name: "gentle",
-    code: "#26b700",
+    code: "	#bdc6c3",
   },
   {
     name: "warning",
-    code: "#fffa17",
+    code: "#f7943a",
   },
   {
     name: "info",
@@ -75,6 +76,7 @@ const ButtonComponent: React.FC<Props> = (props: Props): JSX.Element => {
   ).code
   return (
     <Button
+      type={props._type}
       fullWidth
       variant={props._variant}
       onClick={() => props._functionOnClick()}

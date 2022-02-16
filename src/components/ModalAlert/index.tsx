@@ -44,7 +44,7 @@ const ModalAlert: React.FC<Props> = (props: Props): JSX.Element => {
             <AnnouncementIcon color='error' />
           </section>
           <section>
-          <ButtonComponent  _text="ตกลง" _variant="contained" _colorBG="info" _colorText="white" _functionOnClick={()=>props.setOpenModal(false)}/>
+          <ButtonComponent  _text="ตกลง" _variant="contained" _colorBG="success" _colorText="white" _functionOnClick={()=>props.setOpenModal(false)}/>
 
           </section>
         </div>
