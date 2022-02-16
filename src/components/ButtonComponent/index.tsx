@@ -68,16 +68,16 @@ const listColor: any = [
 ];
 const ButtonComponent: React.FC<Props> = (props: Props): JSX.Element => {
   const codeBG: string = listColor.find(
-    (element: any) => element === props._colorBG
-  ).code;
+    (element: any) => element.name === props._colorBG
+  ).code
   const codeText: string = listColor.find(
-    (element: any) => element === props._colorText
-  ).code;
+    (element: any) => element.name === props._colorText
+  ).code
   return (
     <Button
       fullWidth
       variant={props._variant}
-      onClick={() => props._functionOnClick}
+      onClick={() => props._functionOnClick()}
       style={{
         backgroundColor: codeBG,
         color: codeText,
@@ -85,7 +85,7 @@ const ButtonComponent: React.FC<Props> = (props: Props): JSX.Element => {
         borderColor: codeText,
       }}
     >
-      <span>{props._text}</span>
+      <span className={styles.text}>{props._text}</span>
     </Button>
   );
 };

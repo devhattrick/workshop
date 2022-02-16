@@ -22,7 +22,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 //Component
-import { Demo, Workshop, Profile } from '../../pages'
+import { Demo, Workshop, Profile, Test } from '../../pages'
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -180,6 +180,8 @@ const Home: React.FC = ():JSX.Element =>{
             <Profile/>
         : page === 2 ?
             <Workshop/>
+        : page === 3 ?
+        <Test/>
         :
         <></>}
         

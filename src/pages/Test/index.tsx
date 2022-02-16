@@ -1,69 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styles from './index.module.scss'
 import Button from '@mui/material/Button';
-import { height } from '@mui/system';
+import { ModalAlert,Buttons,ButtonComponent}  from '../../components';
 
-interface Props{
-  _text: string
-  _functionOnClick:any
-  _colorBG: 'success'|'error'|'primary'|'gentle'|'warning'|'info'|'pink'|'black'|'white'
-  _colorText: 'success'|'error'|'primary'|'gentle'|'warning'|'info'|'pink'|'black'|'white'
-  _variant:'text'|'outlined'|'contained'
-}
-const listColor:any = [
-  {
-    name:'success',
-    code:'#26b700',
-  },
-  {
-    name:'error',
-    code:'#ee1e1e',
-  },
-  {
-    name:'primary',
-    code:'#2181ed',
-  },
-  {
-    name:'gentle',
-    code:'#26b700',
-  },
-  {
-    name:'warning',
-    code:'#fffa17',
-  },
-  {
-    name:'info',
-    code:'#0db4b9',
-  },
-  {
-    name:'pink',
-    code:'#ffd4e3',
-  },
-  {
-    name:'black',
-    code:'#000000',
-  },
-  {
-    name:'white',
-    code:'#ffffff',
-  },
 
-]
-const NameComponent: React.FC<Props> = (props:Props): JSX.Element => {
-  const codeBG:string = listColor.find((element:any)=>element === props._colorBG).code
-  const codeText:string = listColor.find((element:any)=>element === props._colorText).code
+const NameComponent: React.FC = (): JSX.Element => {
+  const [open,setOpen] =useState<boolean>(false)
   return (
     
-      <Button
-          fullWidth
-          variant={props._variant}
-          onClick={() =>
-          props?._functionOnClick?.()
-          }
-          style={{ backgroundColor: codeBG, color: codeText, height: 'inherit', borderColor: codeText }}
-       >
-        <span>{props._text}</span>
-      </Button>
+    <>
+    <div>
+    <ModalAlert openModal={open} topic="กรุณากรอกข้อมูล" setOpenModal={()=>setOpen(false)}/>
+    <p>test</p>
+    <Buttons _text="Open" _variant="contained" _onClick={()=>setOpen(true)}/>
+    <ButtonComponent  _text="Open" _variant="contained" _colorBG="info" _colorText="white" _functionOnClick={()=>setOpen(true)}/>
+    </div>
+    </>
    
   )
 }

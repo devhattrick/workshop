@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
-import { ButtonComponent, ListCard } from "../../../components";
+import { ButtonComponent, ListCard, ModalAlert } from "../../../components";
 
 const TodoList: React.FC = (): JSX.Element => {
   const [data, setData] = useState("");
   const [list, setList] = useState<any[]>([]);
-  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+  const [isAlert, setIsAlert] = useState({ show: false, msg: "", type: "" }); //Alert validation
   const handleChange = (e: any) => {
     setData(e.target.value);
   };
@@ -15,8 +15,14 @@ const TodoList: React.FC = (): JSX.Element => {
     const newItem = {
       title: data,
     };
-    setList([...list, newItem]);
-    setData("");
+
+    if (data === '') {
+      setOpenModal(true)
+    }else{
+      setList([...list, newItem]);
+      setData("");
+    }
+    
   };
 
   const itemRemove=(index:any)=>{
@@ -24,11 +30,17 @@ const TodoList: React.FC = (): JSX.Element => {
     newList.splice(index,1)
     setList(newList)
   }
+  const itemEdit=()=>{
+    const editList =[...list]
+  
+  }
   console.log(list);
+  const [openModal,setOpenModal] =useState(false)
 
   return (
     <>
       <div className={styles.containerTodoList}>
+        <ModalAlert topic="กรุณากรอกข้อมูล" openModal={openModal} setOpenModal={()=>setOpenModal(false)}/>
         <p className={styles.textTopic}>Todo List {data}</p>
         <form className={styles.from} onSubmit={submitData}>
           <section className={styles.inputWrapper}>
@@ -49,6 +61,7 @@ const TodoList: React.FC = (): JSX.Element => {
                 <div key={index}>
                   <ListCard
                     _text={e.title}
+                    _onClickEdit={()=>itemEdit}
                     _onClickDelete={() => {
                       console.log("index", index);
                       itemRemove(index)
