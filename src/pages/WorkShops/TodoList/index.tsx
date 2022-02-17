@@ -9,10 +9,14 @@ const TodoList: React.FC = (): JSX.Element => {
   const notify = () => toast.success("แก้ไขข้อมูลเรียบร้อย");
   const [data, setData] = useState("");
   const [list, setList] = useState<any[]>([]);
-  const [isAlert, setIsAlert] = useState({ show: false, msg: "", type: "" }); //Alert validation
+  const [openModal, setOpenModal] = useState(false)
+  const [checkEdit, setCheckEdit] = useState(false) //* เช็คปุ่ม Edit
+  const [editIndex, setEditIndex] = useState<any>(null) //* index ของ กด Edit
+
   const handleChange = (e: any) => {
     setData(e.target.value);
   };
+  //* submitClick
   const submitData = (e: any) => {
     e.preventDefault();
     console.log("data", data);
@@ -21,40 +25,48 @@ const TodoList: React.FC = (): JSX.Element => {
     };
 
     if (data === '') {
+
+      //! ค่าว่างแสดง Alert
       setOpenModal(true)
-    } else if (checkEdit && data) {
+
+    } else if (checkEdit && data) { //* click Edit
+
       console.log('edit indexx', editIndex)
+
       const result = list.map((item: any, index: number) => {
         if (index === editIndex) {
           return { ...item, title: data }
         }
         return item
       })
-      console.log('sl', result)
+
+      console.log(' result after ', result)
       setList(result)
+      //! Clear Field
       setData('')
       setCheckEdit(false)
       setEditIndex(null)
-      notify()
+      notify() //* Alert Success
+
     } else {
+
       setList([...list, newItem]);
       setData("");
-    }
 
+    }
   };
 
+  //todo Click Remove
   const itemRemove = (listIndex: any) => {
     const newList = [...list]
     newList.splice(listIndex, 1)
     setList(newList)
   }
-  const [checkEdit, setCheckEdit] = useState(false)
-  const [editIndex, setEditIndex] = useState<any>(null)
-
+  
+  //todo Click Edit
   const itemEdit = (listIndex: number) => {
     console.log('listIndex', listIndex)
-    // const editList = [...list]
-    setEditIndex(listIndex)
+    setEditIndex(listIndex) //* set Index onClick
     setCheckEdit(true)
     const searchItem = list.find((item: any, index: number) => index === listIndex)
     setData(searchItem.title)
@@ -62,7 +74,6 @@ const TodoList: React.FC = (): JSX.Element => {
   }
   console.log(list);
   console.log('checkEdit', checkEdit);
-  const [openModal, setOpenModal] = useState(false)
 
   return (
     <>
