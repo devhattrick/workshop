@@ -19,7 +19,7 @@ const TodoList: React.FC = (): JSX.Element => {
   //* submitClick
   const submitData = (e: any) => {
     e.preventDefault();
-    console.log("data", data);
+    // console.log("data", data);
     const newItem = {
       title: data,
     };
@@ -31,7 +31,7 @@ const TodoList: React.FC = (): JSX.Element => {
 
     } else if (checkEdit && data) { //* click Edit
 
-      console.log('edit indexx', editIndex)
+      // console.log('edit indexx', editIndex)
 
       const result = list.map((item: any, index: number) => {
         if (index === editIndex) {
@@ -62,18 +62,18 @@ const TodoList: React.FC = (): JSX.Element => {
     newList.splice(listIndex, 1)
     setList(newList)
   }
-  
+
   //todo Click Edit
   const itemEdit = (listIndex: number) => {
-    console.log('listIndex', listIndex)
+    // console.log('listIndex', listIndex)
     setEditIndex(listIndex) //* set Index onClick
     setCheckEdit(true)
     const searchItem = list.find((item: any, index: number) => index === listIndex)
     setData(searchItem.title)
-    console.log('searchItem', searchItem)
+    // console.log('searchItem', searchItem)
   }
-  console.log(list);
-  console.log('checkEdit', checkEdit);
+  // console.log(list);
+  // console.log('checkEdit', checkEdit);
 
   return (
     <>
