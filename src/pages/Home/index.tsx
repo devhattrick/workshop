@@ -171,7 +171,7 @@ const Home: React.FC = ():JSX.Element =>{
               </Button>
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 ,backgroundColor:'#dfdfdf', height:'100vh'}}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 , height:'100vh'}}>
         <DrawerHeader />
         { 
           page === 0 ?
