@@ -2,3 +2,27 @@
     .containerSearchCovid{
         padding:20px 30px;
     }
+    // cardWrapper
+    .dataCardWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .cardCovidData{
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        .topicWrapper{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .textTopic{
+        color: #ffffff;
+    }
+    .textNumber{
+        font-size:2rem;
+        color: #ffffff;
+        text-align: center;
+    }

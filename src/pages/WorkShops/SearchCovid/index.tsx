@@ -3,7 +3,9 @@ import styles from "./index.module.scss";
 import axios from "axios";
 //Mui
 import Card from "@mui/material/Card";
-import Alert from '@mui/material/Alert';
+import Alert from "@mui/material/Alert";
+import CoronavirusIcon from "@mui/icons-material/Coronavirus";
+import SickIcon from '@mui/icons-material/Sick';
 // Component
 import { InputSelect } from "../../../components";
 //Api
@@ -41,30 +43,84 @@ const SearchCovid: React.FC = (): JSX.Element => {
           />
         </section>
         <section>
-          <Card sx={{ padding: "10px", backgroundColor: "#f0f8ff" }}>
-            <p>covidData</p>
-            {
-            covidData!== null && selectData!== ''
-            ?covidData
+          <p>covidData</p>
+          {covidData !== null && selectData !== "" ? (
+            covidData
+
               .filter(
                 (covidData: any) => covidData.province.indexOf(selectData) > -1
               )
               .map((e: any) => {
-                
                 return (
-                  <Card>
-                    <p>ข้อมูลณวันที่ {e.update_date}</p>
-                    <p>จังหวัด {e.province}</p>
-                    <p>ติดเชื้อรายใหม่ : {e.new_case}</p>
-                    <p>ติดเชื้อสะสม : {e.total_case}</p>
-                    <p>เสียชีวิต : {e.total_death}</p>
-                    {/* <p>สาหัส</p> */}
-                  </Card>
+                  <>
+                    <p>{e.province}</p>
+                    <section className={styles.dataCardWrapper}>
+                      <Card
+                        style={{
+                          backgroundColor: "#ff5252",
+                          padding: "10px",
+                          width: "250px",
+                        }}
+                      >
+                        <div className={styles.cardCovidData}>
+                        <article className={styles.topicWrapper}><p className={styles.textTopic}>ติดเชื้อรายใหม่</p>
+                          <SickIcon style={{color:'white'}}/>
+                        </article>
+                          
+                          <p className={styles.textNumber}>+{e.new_case}</p>
+                        
+                        </div>
+                      </Card>
+                      <Card
+                        style={{
+                          backgroundColor: "#6e4218",
+                          padding: "10px",
+                          width: "250px",
+                        }}
+                      >
+                        <div className={styles.cardCovidData}>
+                          <article className={styles.topicWrapper}>
+                            <p className={styles.textTopic}>ผู้ติดเชื้อสะสม</p>
+                            <SickIcon style={{color:'#ffa700'}}/>
+                          </article>
+
+                          <p className={styles.textNumber}>+{e.total_case}</p>
+                        </div>
+                      </Card>
+                      <Card
+                        style={{
+                          backgroundColor: "#aaaaaa",
+                          padding: "10px",
+                          width: "250px",
+                        }}
+                      >
+                        <div className={styles.cardCovidData}>
+                          <p className={styles.textTopic}>ผู้เสียชีวิตล่าสุด</p>
+                          <p className={styles.textNumber}>+{e.total_case}</p>
+                        </div>
+                      </Card>
+                      <Card
+                        style={{
+                          backgroundColor: "#000000",
+                          padding: "10px",
+                          width: "250px",
+                        }}
+                      >
+                        <div className={styles.cardCovidData}>
+                          <p className={styles.textTopic}>ผู้เสียชีวิตสะสม</p>
+                          <p className={styles.textNumber}>+{e.total_death}</p>
+                        </div>
+                      </Card>
+                    </section>
+                  </>
                 );
               })
-            :<> <Alert severity="warning">กรุณาเลือกจังหวัด</Alert></>
-            }
-          </Card>
+          ) : (
+            <>
+              {" "}
+              <Alert severity="warning">กรุณาเลือกจังหวัด</Alert>
+            </>
+          )}
         </section>
       </div>
     </>
