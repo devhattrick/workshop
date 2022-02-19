@@ -6,7 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const TodoList: React.FC = (): JSX.Element => {
-  const notify = () => toast.success("แก้ไขข้อมูลเรียบร้อย");
+  // const notify = () => toast.success("แก้ไขข้อมูลเรียบร้อย");
+
   const [data, setData] = useState("");
   const [list, setList] = useState<any[]>([]);
   const [openModal, setOpenModal] = useState(false)
@@ -46,8 +47,8 @@ const TodoList: React.FC = (): JSX.Element => {
       setData('')
       setCheckEdit(false)
       setEditIndex(null)
-      notify() //* Alert Success
-
+     // notify() //* Alert Success
+     toast.success("แก้ไขข้อมูลเรียบร้อย")
     } else {
 
       setList([...list, newItem]);
@@ -113,6 +114,7 @@ const TodoList: React.FC = (): JSX.Element => {
                     _onClickDelete={() => {
                       console.log("index", listIndex);
                       itemRemove(listIndex)
+                      toast.error("ลบรายการเรียบร้อย")
                     }}
                   />
                 </div>
