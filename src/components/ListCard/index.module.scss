@@ -1,0 +1,44 @@
+// Container
+    .container{
+        padding:15px 20px;
+        border-radius: 12px;
+        background-color:'#ffffff';
+        box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.1);
+
+        .contentWrapper{
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+        }
+
+        .rowWrapper{
+            display: flex;
+            gap: 10px;
+        }
+
+    }
+    //Text
+    .textList{
+        font-size:1.2rem;
+        font-weight:bold;
+    }
+
+    //Button
+    .btnDelete{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        border-radius:50%;
+        padding:10px;
+        border: none;
+        cursor: pointer;
+        &:hover{
+            background-color: #ee7878;
+        }
+    }
+    .btnEdit{
+        @extend .btnDelete;
+        &:hover{
+            background-color: #9ee2e9;
+        }
+    }

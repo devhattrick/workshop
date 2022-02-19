@@ -22,8 +22,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 //Component
-import { Demo, Workshop, Profile } from '../../pages'
-const drawerWidth = 240;
+import { Demo, Workshop, Profile, Test } from '../../pages'
+const drawerWidth = 180; //* 
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -171,7 +171,7 @@ const Home: React.FC = ():JSX.Element =>{
               </Button>
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 ,backgroundColor:'#dfdfdf', height:'100vh'}}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 , height:'100vh'}}>
         <DrawerHeader />
         { 
           page === 0 ?
@@ -180,6 +180,8 @@ const Home: React.FC = ():JSX.Element =>{
             <Profile/>
         : page === 2 ?
             <Workshop/>
+        : page === 3 ?
+        <Test/>
         :
         <></>}
         
