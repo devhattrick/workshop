@@ -5,7 +5,7 @@ import axios from "axios";
 import Card from "@mui/material/Card";
 import Alert from "@mui/material/Alert";
 import CoronavirusIcon from "@mui/icons-material/Coronavirus";
-import SickIcon from '@mui/icons-material/Sick';
+import SickIcon from "@mui/icons-material/Sick";
 // Component
 import { InputSelect } from "../../../components";
 //Api
@@ -43,7 +43,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
           />
         </section>
         <section>
-          <p>covidData</p>
+          <p>สถานการณ์ COVID-19</p>
           {covidData !== null && selectData !== "" ? (
             covidData
 
@@ -53,7 +53,11 @@ const SearchCovid: React.FC = (): JSX.Element => {
               .map((e: any) => {
                 return (
                   <>
-                    <p>{e.province}</p>
+                    <div className={styles.dateBox}>
+                      <p>ข้อมูลวันที่ {e.update_date}</p>
+                    </div>
+                    <br />
+                    <p className={styles.textProvince}>{e.province}</p>
                     <section className={styles.dataCardWrapper}>
                       <Card
                         style={{
@@ -63,12 +67,12 @@ const SearchCovid: React.FC = (): JSX.Element => {
                         }}
                       >
                         <div className={styles.cardCovidData}>
-                        <article className={styles.topicWrapper}><p className={styles.textTopic}>ติดเชื้อรายใหม่</p>
-                          <SickIcon style={{color:'white'}}/>
-                        </article>
-                          
+                          <article className={styles.topicWrapper}>
+                            <p className={styles.textTopic}>ติดเชื้อรายใหม่</p>
+                            <SickIcon style={{ color: "white" }} />
+                          </article>
+
                           <p className={styles.textNumber}>+{e.new_case}</p>
-                        
                         </div>
                       </Card>
                       <Card
@@ -81,7 +85,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
                         <div className={styles.cardCovidData}>
                           <article className={styles.topicWrapper}>
                             <p className={styles.textTopic}>ผู้ติดเชื้อสะสม</p>
-                            <SickIcon style={{color:'#ffa700'}}/>
+                            <SickIcon style={{ color: "#ffa700" }} />
                           </article>
 
                           <p className={styles.textNumber}>+{e.total_case}</p>

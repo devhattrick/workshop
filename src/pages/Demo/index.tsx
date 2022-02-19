@@ -81,7 +81,7 @@ const Demo: React.FC = (): JSX.Element => {
                 </section>
                 <footer>
                     <Button variant="contained" onClick={() => navigate(-1)}>Go Back</Button>
-                    <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button>
+                    {/* <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button> */}
                 </footer>
             </div>
         </>

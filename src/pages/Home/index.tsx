@@ -23,7 +23,7 @@ import CoPresentIcon from '@mui/icons-material/CoPresent';
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 //Component
 import { Demo, Workshop, Profile, Test } from '../../pages'
-const drawerWidth = 240;
+const drawerWidth = 180; //* 
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,

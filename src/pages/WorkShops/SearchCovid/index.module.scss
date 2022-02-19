@@ -8,6 +8,13 @@
         flex-wrap: wrap;
         gap: 20px;
     }
+    .dateBox{
+        background-color: #ffdc1d;
+        color: black;
+        padding: 5px 20px;
+        border-radius: 15px;
+        width:fit-content;
+    }
     .cardCovidData{
         display: flex;
         flex-direction: column;
@@ -20,6 +27,10 @@
     }
     .textTopic{
         color: #ffffff;
+    }
+    .textProvince{
+        font-size:2rem;
+        color:#189ad3;
     }
     .textNumber{
         font-size:2rem;
