@@ -13,7 +13,9 @@
         color: black;
         padding: 5px 20px;
         border-radius: 15px;
-        width:fit-content;
+        // width:fit-content;
+        display: flex;
+        justify-content: center;
     }
     .cardCovidData{
         display: flex;
@@ -28,9 +30,14 @@
     .textTopic{
         color: #ffffff;
     }
+    // .topicDate{
+    //     text-align: right;
+    // }
     .textProvince{
         font-size:2rem;
         color:#189ad3;
+        font-weight:bold;
+        // font: bold, 2rem;
     }
     .textNumber{
         font-size:2rem;

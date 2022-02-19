@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import axios from "axios";
+
 //Mui
 import Card from "@mui/material/Card";
 import Alert from "@mui/material/Alert";
 import CoronavirusIcon from "@mui/icons-material/Coronavirus";
 import SickIcon from "@mui/icons-material/Sick";
+
 // Component
 import { InputSelect } from "../../../components";
+import {DeadIcon} from "../../../images"
+
 //Api
 const covidDataUrl =
   "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces";
@@ -54,9 +58,9 @@ const SearchCovid: React.FC = (): JSX.Element => {
                 return (
                   <>
                     <div className={styles.dateBox}>
-                      <p>ข้อมูลวันที่ {e.update_date}</p>
+                      <p className={styles.topicDate}>ข้อมูลวันที่ {e.update_date}</p>
                     </div>
-                    <br />
+                    {/* <hr /> */}
                     <p className={styles.textProvince}>{e.province}</p>
                     <section className={styles.dataCardWrapper}>
                       <Card
@@ -99,7 +103,10 @@ const SearchCovid: React.FC = (): JSX.Element => {
                         }}
                       >
                         <div className={styles.cardCovidData}>
+                        <article className={styles.topicWrapper}>
                           <p className={styles.textTopic}>ผู้เสียชีวิตล่าสุด</p>
+                          <CoronavirusIcon style={{ color: "#fffff" }}/>
+                          </article>
                           <p className={styles.textNumber}>+{e.total_case}</p>
                         </div>
                       </Card>
@@ -111,7 +118,11 @@ const SearchCovid: React.FC = (): JSX.Element => {
                         }}
                       >
                         <div className={styles.cardCovidData}>
+                        <article className={styles.topicWrapper}>
                           <p className={styles.textTopic}>ผู้เสียชีวิตสะสม</p>
+                          {/* <img src={DeadIcon} alt="" style={{width:'30px',height:'30px'}}  /> */}
+                          <CoronavirusIcon style={{ color: "#ffffff" }}/>
+                          </article>
                           <p className={styles.textNumber}>+{e.total_death}</p>
                         </div>
                       </Card>
