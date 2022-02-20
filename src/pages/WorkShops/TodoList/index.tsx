@@ -32,7 +32,7 @@ const TodoList: React.FC = (): JSX.Element => {
 
     } else if (checkEdit && data) { //* click Edit
 
-      // console.log('edit indexx', editIndex)
+
 
       const result = list.map((item: any, index: number) => {
         if (index === editIndex) {
@@ -47,8 +47,8 @@ const TodoList: React.FC = (): JSX.Element => {
       setData('')
       setCheckEdit(false)
       setEditIndex(null)
-     // notify() //* Alert Success
-     toast.success("แก้ไขข้อมูลเรียบร้อย")
+   
+     toast.success("แก้ไขข้อมูลเรียบร้อย") //* Alert Success
     } else {
 
       setList([...list, newItem]);
@@ -75,7 +75,7 @@ const TodoList: React.FC = (): JSX.Element => {
   }
   // console.log(list);
   // console.log('checkEdit', checkEdit);
-
+console.log('ECheck',checkEdit && data)
   return (
     <>
       <div className={styles.containerTodoList}>
@@ -84,16 +84,14 @@ const TodoList: React.FC = (): JSX.Element => {
         <p className={styles.textTopic}>Todo List</p>
         <form className={styles.from} onSubmit={submitData}>
           <section className={styles.inputWrapper}>
-            {/* {alert.show && } */}
+           
             <input
               type="text"
               className={styles.input}
               onChange={handleChange}
               value={data}
             />
-            {/* <button type="submit" className={styles.btnAdd}>
-              Add Data
-            </button> */}
+          
             <div className={styles.btnBox}>
               {
                 checkEdit ?

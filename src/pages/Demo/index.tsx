@@ -10,7 +10,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // Component
 import { ModalAlert } from '../../components'
 import axios from 'axios'
-
+import {CovidBG} from '../../images'
+// import PdfFile from '../../file/Ex.pdf'
 
 
 const covidDataUrl = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces"
@@ -81,6 +82,8 @@ const Demo: React.FC = (): JSX.Element => {
                 </section>
                 <footer>
                     <Button variant="contained" onClick={() => navigate(-1)}>Go Back</Button>
+                    <Button variant="contained" onClick={() => navigate(-1)}>Down Load</Button>
+                    <a target="_blank" href={CovidBG} download rel="noreferrer">s</a>
                     {/* <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button> */}
                 </footer>
             </div>

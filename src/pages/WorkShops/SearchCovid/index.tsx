@@ -107,7 +107,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
                           <p className={styles.textTopic}>ผู้เสียชีวิตล่าสุด</p>
                           <CoronavirusIcon style={{ color: "#fffff" }}/>
                           </article>
-                          <p className={styles.textNumber}>+{e.new_case}</p>
+                          <p className={styles.textNumber}>+{e.new_death}</p>
                         </div>
                       </Card>
                       <Card
