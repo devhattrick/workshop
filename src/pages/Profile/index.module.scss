@@ -2,3 +2,27 @@
     .container{
         padding:20px 30px;
     }
+
+//ProfileWrapper
+.profileWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// Profile Image
+.profileImage{
+
+    .image{
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+
+    }
+}
+
+//* Text
+.textName{
+    font-size:3rem;
+    font-weight: bold;
+}

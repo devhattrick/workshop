@@ -12,6 +12,7 @@ import { ModalAlert } from '../../components'
 import axios from 'axios'
 import {CovidBG} from '../../images'
 // import PdfFile from '../../file/Ex.pdf'
+// import Excel from '../../file/bridgeport_nhood_profile_2018.csv'
 
 
 const covidDataUrl = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-by-provinces"
