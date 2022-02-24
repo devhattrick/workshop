@@ -21,9 +21,9 @@ const NameComponent: React.FC = (): JSX.Element => {
           <p className={styles.textName}>Peerapol Panmuang</p>
         </section>
         <section className={styles.rowWrapper}>
-          <div></div>
+          {/* <div></div> */}
           <hr className={styles.line} />
-          <div></div>
+          {/* <div></div> */}
         </section>
       </div>
     </>

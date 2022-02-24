@@ -61,7 +61,7 @@
     // animation: glow 2s ease-in-out infinite alternate;
     -webkit-animation: mainFadeIn 2s forwards;
     -o-animation: mainFadeIn 2s forwards;
-    animation: glow 2s,  mainFadeIn 2s forwards ;
+    animation: glow 2s ease-in-out infinite alternate,  mainFadeIn 2s forwards ;
     animation-delay: 1.6s;
     opacity: 0;
     text-align: center;
@@ -70,7 +70,7 @@
           text-shadow: 0 0 20px #a5f2fa;
         }
         to {
-          text-shadow: 0 0 20px #34b3c1, 0 0 10px #4dbbc7;
+          text-shadow: 0 0 20px #4eb9c5, 0 0 10px #5ccad6;
         }
       }
       @keyframes mainFadeIn {
