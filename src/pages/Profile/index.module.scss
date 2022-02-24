@@ -10,6 +10,10 @@
     justify-content: center;
     align-items: center;
 }
+//RowWrapper
+.rowWrapper{
+    display: flex;
+}
 // Profile Image
 .profileImage{
 
@@ -17,12 +21,66 @@
         height: 250px;
         width: 250px;
         border-radius: 50%;
+        position: relative;
+        box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+                animation-name:  spin;
+                animation-duration: 3s;
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        // @keyframes move {
+        //     0% {
+
+        //         left: 0px;
+        //     }
+
+        //     100% {
+
+        //         left: 120px;
+        //     }
+        // }
 
     }
 }
 
+//
+.line{
+    // flex-grow: 1;
+    transform: rotate(-90deg);
+}
 //* Text
 .textName{
     font-size:3rem;
     font-weight: bold;
+    color: #04294b;
+    // animation: glow 2s ease-in-out infinite alternate;
+    -webkit-animation: mainFadeIn 2s forwards;
+    -o-animation: mainFadeIn 2s forwards;
+    animation: glow 2s,  mainFadeIn 2s forwards ;
+    animation-delay: 1.6s;
+    opacity: 0;
+    text-align: center;
+    @keyframes glow {
+        from {
+          text-shadow: 0 0 20px #a5f2fa;
+        }
+        to {
+          text-shadow: 0 0 20px #34b3c1, 0 0 10px #4dbbc7;
+        }
+      }
+      @keyframes mainFadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      
 }
+
