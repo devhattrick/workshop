@@ -132,8 +132,8 @@ const SearchCovid: React.FC = (): JSX.Element => {
               })
           ) : (
             <>
-              {" "}
-              <Alert severity="warning">กรุณาเลือกจังหวัด</Alert>
+            
+              <Alert severity="warning"><p>กรุณาเลือกจังหวัด</p></Alert>
             </>
           )}
         </section>

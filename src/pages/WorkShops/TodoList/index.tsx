@@ -92,14 +92,14 @@ console.log('ECheck',checkEdit && data)
               value={data}
             />
           
-            <div className={styles.btnBox}>
+            <article className={styles.btnBox}>
               {
                 checkEdit ?
                   <ButtonComponent _type="submit" _text="Edit Item" _isIcon="edit" _variant="contained" _colorBG="warning" _colorText="white" />
                   :
                   <ButtonComponent _type="submit" _text="Add Item" _isIcon="add" _variant="contained" _colorBG="primary" _colorText="white" />
               }
-            </div>
+            </article>
 
           </section>
           <section className={styles.showListWrapper}>
