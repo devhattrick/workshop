@@ -212,19 +212,34 @@ export const RadarChart: React.FC<Props> = (props: Props): JSX.Element => {
 
 //* Bubble 
 const dataBubble = {
-  datasets: [{
+  datasets: [
+    {
     label: 'First Dataset',
     data: [{
-      x: 20,
+      x: 235,
       y: 30,
       r: 15
     }, {
-      x: 40,
-      y: 10,
+      x: 42,
+      y: 15,
       r: 10
     }],
     backgroundColor: 'rgb(255, 99, 132)'
-  }]
+  },
+    {
+    label: '2 Dataset',
+    data: [{
+      x: 25,
+      y: 20,
+      r: 15
+    }, {
+      x: 40,
+      y: 25,
+      r: 10
+    }],
+    backgroundColor: '#1e7563'
+  }
+]
 };
 export const BubbleChart: React.FC<Props> = (props: Props): JSX.Element => {
   const chartRef = useRef();
