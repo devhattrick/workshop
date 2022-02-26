@@ -57,6 +57,20 @@ const Demo: React.FC = (): JSX.Element => {
               <TodoList />
             </AccordionDetails>
           </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>
+                <p className={styles.textTopicList}>Chart Data</p>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+             'wait ChartDATA'
+            </AccordionDetails>
+          </Accordion>
           <Accordion disabled>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
