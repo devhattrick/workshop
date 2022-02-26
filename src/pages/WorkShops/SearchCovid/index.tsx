@@ -26,7 +26,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
     axios.get(covidDataUrl).then((response) => {
       setCovidData(response.data);
       console.log("Res", response.data);
-      const newArrProvince: any[] = [];
+      const newArrProvince: any = [];
       response.data.map((e: any) =>
         newArrProvince.push({ label: `${e.province}`, value: `${e.province}` })
       );
@@ -76,7 +76,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
                             <SickIcon style={{ color: "white" }} />
                           </article>
 
-                          <p className={styles.textNumber}>+{e.new_case}</p>
+                          <p className={styles.textNumber}>{'+'}{e.new_case}</p>
                         </div>
                       </Card>
                       <Card
@@ -107,7 +107,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
                           <p className={styles.textTopic}>ผู้เสียชีวิตล่าสุด</p>
                           <CoronavirusIcon style={{ color: "#fffff" }}/>
                           </article>
-                          <p className={styles.textNumber}>+{e.total_case}</p>
+                          <p className={styles.textNumber}>+{e.new_death}</p>
                         </div>
                       </Card>
                       <Card
@@ -132,8 +132,8 @@ const SearchCovid: React.FC = (): JSX.Element => {
               })
           ) : (
             <>
-              {" "}
-              <Alert severity="warning">กรุณาเลือกจังหวัด</Alert>
+            
+              <Alert severity="warning"><p>กรุณาเลือกจังหวัด</p></Alert>
             </>
           )}
         </section>

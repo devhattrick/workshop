@@ -5,7 +5,7 @@ import logo from './logo.svg';
 // import  './App.scss';
 import { HomePage,Demo } from './pages';
 import {
-  BrowserRouter,
+  // BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";

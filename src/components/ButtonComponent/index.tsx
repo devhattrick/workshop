@@ -94,7 +94,8 @@ const ButtonComponent: React.FC<Props> = (props: Props): JSX.Element => {
         props._isIcon === "add"  ? <AddCircleOutlineIcon /> 
         : props._isIcon === "delete" ? <ClearIcon /> 
         : props._isIcon === "edit" ? <EditIcon /> 
-        : <></>}
+        : <></>
+      }
     >
       <span className={styles.text}>{props._text}</span>
     </Button>
