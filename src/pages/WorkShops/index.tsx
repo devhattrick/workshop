@@ -34,7 +34,7 @@ const Demo: React.FC = (): JSX.Element => {
               id="panel1a-header"
             >
               <Typography>
-                <p>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p>
+                <p className={styles.textTopicList}>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p>
               </Typography>
             </AccordionSummary>
             <AccordionDetails className={styles.covidContainer}>
@@ -50,7 +50,7 @@ const Demo: React.FC = (): JSX.Element => {
               id="panel2a-header"
             >
               <Typography>
-                <p>Todo List</p>
+                <p className={styles.textTopicList}>Todo List</p>
               </Typography>
             </AccordionSummary>
             <AccordionDetails>

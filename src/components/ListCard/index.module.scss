@@ -15,7 +15,13 @@
             display: flex;
             gap: 10px;
         }
-
+        .btnDelete{
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        &:hover{.btnDelete{
+            opacity: 1;
+        }}
     }
     //Text
     .textList{
@@ -32,8 +38,11 @@
         padding:10px;
         border: none;
         cursor: pointer;
+       
         &:hover{
             background-color: #ee7878;
+           
+
         }
     }
     .btnEdit{
