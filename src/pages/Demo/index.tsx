@@ -101,20 +101,7 @@ const Demo: React.FC = (): JSX.Element => {
           <p className={styles.text}>Demo</p>
         </nav>
         <section>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>
-                <p>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p>
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography></Typography>
-            </AccordionDetails>
-          </Accordion>
+        
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -122,7 +109,7 @@ const Demo: React.FC = (): JSX.Element => {
               id="panel2a-header"
             >
               <Typography>
-                <p>Accordion 2</p>
+                <p>Chart 2</p>
               </Typography>
             </AccordionSummary>
             <AccordionDetails>

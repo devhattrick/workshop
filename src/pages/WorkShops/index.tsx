@@ -11,6 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { InputSelect } from "../../components";
 import SearchCovid from "./SearchCovid";
 import TodoList from "./TodoList";
+import ChartDATA from "../ChartData";
 // import axios from 'axios'
 
 const covidDataUrl =
@@ -24,7 +25,7 @@ const Demo: React.FC = (): JSX.Element => {
     <>
       <div className={styles.container}>
         <nav>
-          <p className={styles.text}>WorkShops</p>
+          <p className={styles.text}>Work Shops</p>
         </nav>
         <section>
           <Accordion>
@@ -34,7 +35,9 @@ const Demo: React.FC = (): JSX.Element => {
               id="panel1a-header"
             >
               <Typography>
-                <p className={styles.textTopicList}>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p>
+                <p className={styles.textTopicList}>
+                  รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด
+                </p>
               </Typography>
             </AccordionSummary>
             <AccordionDetails className={styles.covidContainer}>
@@ -68,7 +71,7 @@ const Demo: React.FC = (): JSX.Element => {
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-             'wait ChartDATA'
+              {/* <ChartDATA /> */}
             </AccordionDetails>
           </Accordion>
           <Accordion disabled>
