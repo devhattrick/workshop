@@ -20,7 +20,8 @@ import {
 } from "../../components";
 import axios from "axios";
 import { CovidBG } from "../../images";
-// import PdfFile from '../../file/Ex.pdf'
+// import Resume from '../../file/Ex.pdf'
+// import { Document, Page } from 'react-pdf';
 // import Excel from '../../file/bridgeport_nhood_profile_2018.csv'
 
 const covidDataUrl =
@@ -148,8 +149,8 @@ const Demo: React.FC = (): JSX.Element => {
           <Button variant="contained" onClick={() => navigate(-1)}>
             Down Load
           </Button>
-          <a target="_blank" href={CovidBG} download rel="noreferrer">
-            s
+          <a target="_blank" href="https://drive.google.com/file/d/12CqscPp2EXl6DE8MLQHRQSuVWvj-QB3k/view?usp=sharing" download rel="noreferrer">
+           Download
           </a>
           {/* <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button> */}
         </footer>

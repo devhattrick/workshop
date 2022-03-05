@@ -67,7 +67,7 @@ const Demo: React.FC = (): JSX.Element => {
               id="panel2a-header"
             >
               <Typography>
-                <p className={styles.textTopicList}>Chart Data</p>
+                <p className={styles.textTopicList}>Data Table</p>
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
