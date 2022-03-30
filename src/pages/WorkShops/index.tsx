@@ -12,6 +12,7 @@ import { InputSelect } from "../../components";
 import SearchCovid from "./SearchCovid";
 import TodoList from "./TodoList";
 import ChartDATA from "../ChartData";
+import Pagination from './Pagination'
 // import axios from 'axios'
 
 const covidDataUrl =
@@ -58,6 +59,20 @@ const Demo: React.FC = (): JSX.Element => {
             </AccordionSummary>
             <AccordionDetails>
               <TodoList />
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>
+                <p className={styles.textTopicList}>Pagination</p>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+             <Pagination/>
             </AccordionDetails>
           </Accordion>
           <Accordion>

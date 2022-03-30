@@ -25,7 +25,7 @@ const SearchCovid: React.FC = (): JSX.Element => {
   useEffect(() => {
     axios.get(covidDataUrl).then((response) => {
       setCovidData(response.data);
-      console.log("Res", response.data);
+      // console.log("Res", response.data);
       const newArrProvince: any = [];
       response.data.map((e: any) =>
         newArrProvince.push({ label: `${e.province}`, value: `${e.province}` })
