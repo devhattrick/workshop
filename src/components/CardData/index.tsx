@@ -7,7 +7,7 @@ interface Props {
     index?:number
 }
 const CardData: React.FC<Props> = (props:Props): JSX.Element => {
-console.log('props pagination',props)
+// console.log('props pagination',props)
   return (
     <div className={styles.container}>
         <section>
