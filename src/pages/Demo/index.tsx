@@ -20,7 +20,8 @@ import {
 } from "../../components";
 import axios from "axios";
 import { CovidBG } from "../../images";
-// import PdfFile from '../../file/Ex.pdf'
+// import Resume from '../../file/Ex.pdf'
+// import { Document, Page } from 'react-pdf';
 // import Excel from '../../file/bridgeport_nhood_profile_2018.csv'
 
 const covidDataUrl =
@@ -101,20 +102,7 @@ const Demo: React.FC = (): JSX.Element => {
           <p className={styles.text}>Demo</p>
         </nav>
         <section>
-          <Accordion>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>
-                <p>รายงานสถานการณ์ COVID-19 ประจำวัน แยกตามรายจังหวัด</p>
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography></Typography>
-            </AccordionDetails>
-          </Accordion>
+        
           <Accordion>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -122,7 +110,7 @@ const Demo: React.FC = (): JSX.Element => {
               id="panel2a-header"
             >
               <Typography>
-                <p>Accordion 2</p>
+                <p>Chart 2</p>
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -161,8 +149,8 @@ const Demo: React.FC = (): JSX.Element => {
           <Button variant="contained" onClick={() => navigate(-1)}>
             Down Load
           </Button>
-          <a target="_blank" href={CovidBG} download rel="noreferrer">
-            s
+          <a target="_blank" href="https://drive.google.com/file/d/12CqscPp2EXl6DE8MLQHRQSuVWvj-QB3k/view?usp=sharing" download rel="noreferrer">
+           Download
           </a>
           {/* <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button> */}
         </footer>
