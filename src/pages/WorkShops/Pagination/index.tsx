@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import axios from "axios";
 import MenuData from './menuData'
+
 //conponents
 import { CardData } from "../../../components";
+
 //Api
 const pokemonData = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=200";
-const Pagination: React.FC = (): JSX.Element => {
-  // State
-//   const [dataA, setDataA] = useState("Hello");
-  const [dataPokemon, setDatapokemon] = useState<any>(MenuData); //* data from api
 
+const Pagination: React.FC = (): JSX.Element => {
+  //* State
+//   const [dataA, setDataA] = useState("Hello");
+  const [dataList, setDataList] = useState<any>(MenuData); //* data from api
   const [dataInPage, setDataInPage] = useState<any>([]); //* list in page
   const [page,setPage] = useState(0) //* page
   console.log('isPage',page)
@@ -46,18 +48,18 @@ const Pagination: React.FC = (): JSX.Element => {
   useEffect(() => {
     const paginate = pagination()
     setDataInPage(paginate)
-	setDatapokemon(paginate[page])
+	setDataList(paginate[page])
   }, [page]);
 
 
-console.log('dataPokemon',MenuData)
+console.log('dataList',MenuData)
   return (
     <>
       <div>
         {/* <h1>{dataA}</h1> */}
         <div className={styles.cardWrapper}>
-          {dataPokemon &&
-            dataPokemon.map((element: any, index: number) => (
+          {dataList &&
+            dataList.map((element: any, index: number) => (
               <CardData name={element.name} image={element.image_url} />
             ))}
         </div>
