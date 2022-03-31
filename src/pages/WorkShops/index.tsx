@@ -8,7 +8,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // Component
-import { InputSelect } from "../../components";
+import { InputSelect, DataTable } from "../../components";
 import SearchCovid from "./SearchCovid";
 import TodoList from "./TodoList";
 import ChartDATA from "../ChartData";
@@ -86,7 +86,7 @@ const Demo: React.FC = (): JSX.Element => {
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              {/* <ChartDATA /> */}
+              <DataTable/>
             </AccordionDetails>
           </Accordion>
           <Accordion disabled>
