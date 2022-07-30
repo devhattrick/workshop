@@ -143,16 +143,18 @@ const Demo: React.FC = (): JSX.Element => {
           </Accordion>
         </section>
         <footer>
-          <Button variant="contained" onClick={() => navigate(-1)}>
-            Go Back
-          </Button>
-          <Button variant="contained" onClick={() => navigate(-1)}>
-            Down Load
-          </Button>
-          <a target="_blank" href="https://drive.google.com/file/d/12CqscPp2EXl6DE8MLQHRQSuVWvj-QB3k/view?usp=sharing" download rel="noreferrer">
-           Download
-          </a>
-          {/* <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button> */}
+          <section className={styles.btnWrapper}>
+            <Button className={styles.textStyle} color="success" variant="contained" onClick={() => navigate(-1)}>
+              Go Back
+            </Button>
+            <Button className={styles.textStyle} variant="contained" onClick={() => navigate(-1)}>
+              Down Load
+            </Button>
+            <a target="_blank" href="https://drive.google.com/file/d/12CqscPp2EXl6DE8MLQHRQSuVWvj-QB3k/view?usp=sharing" download rel="noreferrer">
+            Go to Resume
+            </a>
+            {/* <Button variant="contained" onClick={() => setOpenModal(true)}>Modal</Button> */}
+          </section>
         </footer>
       </div>
     </>

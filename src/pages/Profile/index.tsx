@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./index.module.scss";
 // img
 import { Profile1 } from "../../images";
+import {ButtonComponent} from "../../components/index"
+import { useNavigate } from "react-router-dom";
 
 const NameComponent: React.FC = (): JSX.Element => {
+  const  navigate = useNavigate();
   return (
     <>
       <div className={styles.container}>
@@ -24,6 +27,16 @@ const NameComponent: React.FC = (): JSX.Element => {
           {/* <div></div> */}
           <hr className={styles.line} />
           {/* <div></div> */}
+        </section>
+        <section>
+         
+        <ButtonComponent 
+          _colorBG="primary"
+          _colorText="white"
+          _variant="outlined"
+          _text="Go to Demo"
+          _functionOnClick={()=>navigate('/demo')}
+        />
         </section>
       </div>
     </>

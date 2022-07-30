@@ -11,3 +11,13 @@
     font-size: 2rem;
     font-weight: bold;
 }
+.btnWrapper{
+    display: flex;
+    gap:20px;
+
+    .textStyle{
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
