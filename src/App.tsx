@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import logo from './logo.svg';
 // import './App.scss';
 // import  './App.scss';
-import { HomePage,Demo } from './pages';
+import { HomePage,Demo,Profile } from './pages';
 import {
   // BrowserRouter,
   Routes,
@@ -15,6 +15,7 @@ const App: React.FC = (): JSX.Element => {
     <Routes>
       <Route path="/" element={<HomePage />}/>
       <Route path="/demo" element={<Demo />}/>
+      <Route path="/profile" element={<Profile />}/>
     </Routes>
   );
 }

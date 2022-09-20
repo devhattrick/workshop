@@ -4,6 +4,7 @@ import styles from "./index.module.scss";
 import { Profile1 } from "../../images";
 import {ButtonComponent} from "../../components/index"
 import { useNavigate } from "react-router-dom";
+import { width } from "@mui/system";
 
 const NameComponent: React.FC = (): JSX.Element => {
   const  navigate = useNavigate();
@@ -28,7 +29,7 @@ const NameComponent: React.FC = (): JSX.Element => {
           <hr className={styles.line} />
           {/* <div></div> */}
         </section>
-        <section>
+        <section style={{width:"160px"}}>
          
         <ButtonComponent 
           _colorBG="primary"

@@ -30,7 +30,8 @@ interface Props {
   | "black"
   | "white";
   _variant: "text" | "outlined" | "contained";
-  _type?: "button" | "submit"
+  _type?: "button" | "submit";
+  _disabled?: boolean;
 }
 
 const listColor: any = [
@@ -80,6 +81,7 @@ const ButtonComponent: React.FC<Props> = (props: Props): JSX.Element => {
   ).code
   return (
     <Button
+      disabled = {props._disabled}
       type={props._type}
       fullWidth
       variant={props._variant}

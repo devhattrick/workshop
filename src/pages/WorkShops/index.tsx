@@ -11,6 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { InputSelect, DataTable } from "../../components";
 import SearchCovid from "./SearchCovid";
 import TodoList from "./TodoList";
+import ListArray from "./ListArray";
 import ChartDATA from "../ChartData";
 import Pagination from './Pagination'
 // import axios from 'axios'
@@ -87,6 +88,21 @@ const Demo: React.FC = (): JSX.Element => {
             </AccordionSummary>
             <AccordionDetails>
               <DataTable/>
+            </AccordionDetails>
+          </Accordion>
+          {/* ArrayList */}
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography>
+                <p className={styles.textTopicList}>Array List</p>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <ListArray/>
             </AccordionDetails>
           </Accordion>
           <Accordion disabled>
